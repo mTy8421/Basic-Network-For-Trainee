@@ -16,7 +16,7 @@
 |# show file systems|Lists available file systems||
 |# exit|Exits current mode/l​evel||
 
-> Housekeeping
+> House keeping
 
 | Command | Description |
 |--|--|
