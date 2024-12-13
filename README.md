@@ -15,3 +15,16 @@
 |# clock set {time} {date}|Sets manual Time/Date||
 |# show file systems|Lists available file systems||
 |# exit|Exits current mode/l​evel||
+
+> Housekeeping
+
+| Command | Description |
+|--|--|
+|(config) # ho { name }|Set name of device|
+|(config) # ena sec { password }|Set encypted password for Priv Exec Mode|
+|(config) # ser pass|Encrypts All Passwords|
+|(config) # banner motd $ { Banner } $|Creates Message banner|
+|(config) # security pass min { number }|Sets min password length|
+|(config) # login block-for { time } attempts { attempts } within { time }|Login failure wait time set|
+|(config-line) # pass { password }|Sets password for Console Line|
+|(config-line) # login|Makes passwords active, use after every password config|
