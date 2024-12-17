@@ -1,6 +1,6 @@
 # Cisco Basic Cheat Sheet
 
-> General
+General
 
 | Command | Description | Displays As |
 |--|--|--|
@@ -16,7 +16,7 @@
 |# show file systems|Lists available file systems||
 |# exit|Exits current mode/l​evel||
 
-> House keeping
+House keeping
 
 | Command | Description |
 |--|--|
