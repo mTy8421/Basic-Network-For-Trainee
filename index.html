@@ -4,9 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Basic Network for Trainee - แหล่งเรียนรู้ระบบเครือข่ายฉบับสมบูรณ์</title>
+  <!-- Google Fonts: Plus Jakarta Sans, Prompt (Thai), JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="readingProgressBar"></div>
 
   <!-- Top Navigation Bar -->
   <header class="top-nav">
@@ -23,6 +30,7 @@
       <div class="search-box">
         <span class="search-icon">🔍</span>
         <input type="text" id="searchInput" placeholder="ค้นหาเนื้อหาหรือคำสั่ง...">
+        <span class="search-kbd">Ctrl K</span>
       </div>
       <button class="btn-icon" id="themeToggle" title="สลับโหมดมืด/สว่าง">
         <span class="theme-icon">☀️</span>
@@ -149,10 +157,26 @@
 
       <!-- Hero Banner -->
       <section id="overview" class="hero-banner">
+        <div class="hero-badge-pill">
+          <span class="live-pulse-dot"></span>
+          <span>Cisco CCNA 200-301 Curriculum • อัปเดตเนื้อหาครบ 12 โมดูล</span>
+        </div>
         <h1 class="hero-title">Basic Network for Trainee</h1>
         <p class="hero-desc">
           คู่มือการเรียนรู้และระบบจำลองเชิงโต้ตอบ ครอบคลุมพื้นฐานระบบเครือข่ายคอมพิวเตอร์ การกำหนดค่าอุปกรณ์ Cisco Router & Switch จากหลักสูตรอบรม 4 วัน 12 โมดูล สไลด์ฉบับสมบูรณ์ 302 หน้า โดย <strong>Panthakit Totid</strong>
         </p>
+
+        <div class="hero-actions">
+          <a href="#tools-cli" class="btn-hero-primary">
+            <span>💻 ทดลอง Cisco CLI Lab</span>
+          </a>
+          <a href="#tools-calculator" class="btn-hero-secondary">
+            <span>🧮 คำนวณ IPv4 Subnet</span>
+          </a>
+          <a href="#mod-1" class="btn-hero-outline">
+            <span>🚀 เริ่มเรียน Day 1</span>
+          </a>
+        </div>
 
         <div class="hero-stats">
           <div class="stat-card">
@@ -199,7 +223,14 @@
                 <option value="24">/24 (255.255.255.0)</option>
               </select>
             </div>
-            <button class="btn-icon" id="btnCalculate" style="width: 100%; justify-content: center; background: var(--accent-blue); color: white; padding: 12px; margin-top: 10px;">
+            <div class="calc-presets">
+              <span class="calc-presets-label">เลือกแบบด่วน:</span>
+              <button type="button" class="preset-chip" data-ip="192.168.1.100" data-cidr="24">/24 (LAN ทั่วไป)</button>
+              <button type="button" class="preset-chip" data-ip="10.0.0.1" data-cidr="30">/30 (Router P2P)</button>
+              <button type="button" class="preset-chip" data-ip="172.16.10.1" data-cidr="28">/28 (VLAN Subnet)</button>
+              <button type="button" class="preset-chip" data-ip="10.1.1.0" data-cidr="31">/31 (RFC 3021)</button>
+            </div>
+            <button class="btn-icon" id="btnCalculate" style="width: 100%; justify-content: center; background: var(--grad-primary); color: white; padding: 12px; margin-top: 10px; border: none; box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);">
               คำนวณ Subnet ทันที 🚀
             </button>
             <div class="info-pill" style="margin-top: 18px;">
@@ -1241,6 +1272,9 @@ Gi0/1     1000M Pair A     8    +/- 10 meters Pair B      Normal
 
     </main>
   </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="กลับขึ้นด้านบน" title="กลับขึ้นด้านบน">↑</button>
 
   <script src="script.js"></script>
 </body>

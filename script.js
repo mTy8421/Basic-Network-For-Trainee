@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initEncapsulationVisualizer();
   initQuiz();
   initCodeCopy();
+  initProgressBarAndBackToTop();
 });
 
 /* ==========================================================================
@@ -128,6 +129,19 @@ function initSearch() {
       }
     });
   });
+
+  // Global Keyboard Shortcut: Ctrl+K or / to focus search
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      searchInput.focus();
+      searchInput.select();
+    } else if (e.key === '/' && document.activeElement !== searchInput && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+      e.preventDefault();
+      searchInput.focus();
+      searchInput.select();
+    }
+  });
 }
 
 /* ==========================================================================
@@ -137,6 +151,7 @@ function initSubnetCalculator() {
   const ipInput = document.getElementById('calcIp');
   const cidrSelect = document.getElementById('calcCidr');
   const btnCalculate = document.getElementById('btnCalculate');
+  const presetChips = document.querySelectorAll('.preset-chip');
 
   // Populate CIDR dropdown /1 to /32
   if (cidrSelect && cidrSelect.options.length <= 1) {
@@ -183,6 +198,17 @@ function initSubnetCalculator() {
   if (cidrSelect) {
     cidrSelect.addEventListener('change', runCalc);
   }
+
+  // Quick Preset Chips Handler
+  presetChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const ip = chip.getAttribute('data-ip');
+      const cidr = chip.getAttribute('data-cidr');
+      if (ip && ipInput) ipInput.value = ip;
+      if (cidr && cidrSelect) cidrSelect.value = cidr;
+      runCalc();
+    });
+  });
 
   // Run on initial load
   runCalc();
@@ -767,3 +793,41 @@ function initCodeCopy() {
     });
   });
 }
+
+/* ==========================================================================
+   10. Reading Progress Bar & Back to Top Button
+   ========================================================================== */
+function initProgressBarAndBackToTop() {
+  const progressBar = document.getElementById('readingProgressBar');
+  const backToTopBtn = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    // Progress Bar
+    if (progressBar && scrollHeight > 0) {
+      const progress = Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100));
+      progressBar.style.width = `${progress}%`;
+    }
+
+    // Back to Top Button Visibility
+    if (backToTopBtn) {
+      if (scrollTop > 350) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+  });
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+}
+
