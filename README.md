@@ -490,6 +490,9 @@ Gi0/1     1000M Pair A     8    +/- 10 meters Pair B      Normal
 
 | ไฟล์ (File Name) | คำอธิบาย (Description) |
 |---|---|
+| [`index.html`](./index.html) | เว็บแอปพลิเคชันเพื่อการเรียนรู้แบบโต้ตอบ (Interactive Web Learning Platform) พร้อมเครื่องมือคำนวณ Subnet, Cisco CLI Simulator, และแบบทดสอบ |
+| [`style.css`](./style.css) | สไตล์ชีตสำหรับตกแต่งหน้าเว็บ รองรับ Responsive Design และ Dark/Light Theme |
+| [`script.js`](./script.js) | สคริปต์การทำงานของเครื่องมือคำนวณ Subnet, Terminal จำลอง, Visualizer และแบบทดสอบ |
 | [`Basic Network v3 - Panthakit Totid.pdf`](./Basic%20Network%20v3%20-%20Panthakit%20Totid.pdf) | เอกสารประกอบการสอนสไลด์ฉบับเต็ม 302 หน้า ครอบคลุมทั้ง 12 โมดูล |
 | [`README.md`](./README.md) | เอกสารภาพรวมหลักสูตร สรุปเนื้อหา และ Cisco CLI Command Cheat Sheet |
 

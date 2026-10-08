@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Network for Trainee - แหล่งเรียนรู้ระบบเครือข่ายฉบับสมบูรณ์</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="brand-section">
+      <button class="btn-icon menu-toggle" id="menuToggle" aria-label="Toggle Menu">☰</button>
+      <div class="brand-icon">🌐</div>
+      <div class="brand-title">
+        Basic Network for Trainee
+        <span class="badge-tag">v3.0</span>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="ค้นหาเนื้อหาหรือคำสั่ง...">
+      </div>
+      <button class="btn-icon" id="themeToggle" title="สลับโหมดมืด/สว่าง">
+        <span class="theme-icon">☀️</span>
+      </button>
+      <a href="./Basic%20Network%20v3%20-%20Panthakit%20Totid.pdf" class="btn-icon" download style="text-decoration: none;">
+        <span>📥 โหลด PDF (302 หน้า)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- App Container -->
+  <div class="app-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="sidebar-heading">ภาพรวมและเครื่องมือ</div>
+      <div class="sidebar-nav-group">
+        <a href="#overview" class="sidebar-link active">
+          <span>🎯 ภาพรวมหลักสูตร</span>
+        </a>
+        <a href="#tools-calculator" class="sidebar-link">
+          <span>🧮 คำนวณ Subnet (IPv4)</span>
+          <span class="day-tag">Tool</span>
+        </a>
+        <a href="#tools-cli" class="sidebar-link">
+          <span>💻 Cisco CLI Simulator</span>
+          <span class="day-tag">Lab</span>
+        </a>
+        <a href="#tools-encapsulation" class="sidebar-link">
+          <span>📦 Packet Flow Visualizer</span>
+          <span class="day-tag">Interactive</span>
+        </a>
+        <a href="#quiz-section" class="sidebar-link">
+          <span>📝 แบบทดสอบความรู้</span>
+          <span class="day-tag">Quiz</span>
+        </a>
+      </div>
+
+      <div class="sidebar-heading">Day 1: พื้นฐานเครือข่าย & IPv4</div>
+      <div class="sidebar-nav-group">
+        <a href="#mod-1" class="sidebar-link">
+          <span>Module 1: Intro to Networks</span>
+          <span class="day-tag">Day 1</span>
+        </a>
+        <a href="#mod-2" class="sidebar-link">
+          <span>Module 2: OSI & TCP/IP Model</span>
+          <span class="day-tag">Day 1</span>
+        </a>
+        <a href="#mod-3" class="sidebar-link">
+          <span>Module 3: Networking Devices</span>
+          <span class="day-tag">Day 1</span>
+        </a>
+        <a href="#mod-4-part1" class="sidebar-link">
+          <span>Module 4: IPv4 Addressing</span>
+          <span class="day-tag">Day 1</span>
+        </a>
+      </div>
+
+      <div class="sidebar-heading">Day 2: Subnetting & Routing</div>
+      <div class="sidebar-nav-group">
+        <a href="#mod-4-part2" class="sidebar-link">
+          <span>Module 4: VLSM & Subnetting</span>
+          <span class="day-tag">Day 2</span>
+        </a>
+        <a href="#mod-5" class="sidebar-link">
+          <span>Module 5: Function of Routing</span>
+          <span class="day-tag">Day 2</span>
+        </a>
+        <a href="#mod-6" class="sidebar-link">
+          <span>Module 6: Static Routing</span>
+          <span class="day-tag">Day 2</span>
+        </a>
+      </div>
+
+      <div class="sidebar-heading">Day 3: Switching & Inter-VLAN</div>
+      <div class="sidebar-nav-group">
+        <a href="#mod-7" class="sidebar-link">
+          <span>Module 7: STP & EtherChannel</span>
+          <span class="day-tag">Day 3</span>
+        </a>
+        <a href="#mod-8" class="sidebar-link">
+          <span>Module 8: VLANs and Trunks</span>
+          <span class="day-tag">Day 3</span>
+        </a>
+        <a href="#mod-9" class="sidebar-link">
+          <span>Module 9: Routing Between VLANs</span>
+          <span class="day-tag">Day 3</span>
+        </a>
+        <a href="#mod-10-part1" class="sidebar-link">
+          <span>Module 10: Dynamic Routing (1)</span>
+          <span class="day-tag">Day 3</span>
+        </a>
+      </div>
+
+      <div class="sidebar-heading">Day 4: OSPF, FHRP & Security</div>
+      <div class="sidebar-nav-group">
+        <a href="#mod-10-part2" class="sidebar-link">
+          <span>Module 10: OSPF Single Area (2)</span>
+          <span class="day-tag">Day 4</span>
+        </a>
+        <a href="#mod-11" class="sidebar-link">
+          <span>Module 11: Layer 3 Redundancy</span>
+          <span class="day-tag">Day 4</span>
+        </a>
+        <a href="#mod-12" class="sidebar-link">
+          <span>Module 12: ACL Concepts</span>
+          <span class="day-tag">Day 4</span>
+        </a>
+      </div>
+
+      <div class="sidebar-heading">สรุปคำสั่งและเครื่องมือช่าง</div>
+      <div class="sidebar-nav-group">
+        <a href="#cheatsheet" class="sidebar-link">
+          <span>📋 Cisco CLI Cheat Sheet</span>
+        </a>
+        <a href="#cable-test" class="sidebar-link">
+          <span>🔌 TDR Cable Diagnostic</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Hero Banner -->
+      <section id="overview" class="hero-banner">
+        <h1 class="hero-title">Basic Network for Trainee</h1>
+        <p class="hero-desc">
+          คู่มือการเรียนรู้และระบบจำลองเชิงโต้ตอบ ครอบคลุมพื้นฐานระบบเครือข่ายคอมพิวเตอร์ การกำหนดค่าอุปกรณ์ Cisco Router & Switch จากหลักสูตรอบรม 4 วัน 12 โมดูล สไลด์ฉบับสมบูรณ์ 302 หน้า โดย <strong>Panthakit Totid</strong>
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-number">4 วัน</div>
+            <div class="stat-label">ระยะเวลาหลักสูตร</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">12 บท</div>
+            <div class="stat-label">โมดูลการเรียนรู้</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">302 หน้า</div>
+            <div class="stat-label">สไลด์ประกอบการสอน</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">คำสั่ง Cisco IOS CLI</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           INTERACTIVE TOOLS SECTION
+           =================================================================== -->
+
+      <!-- Tool 1: IPv4 Subnet Calculator -->
+      <section id="tools-calculator" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Interactive Tool</span>
+            <h2 class="module-title">🧮 เครื่องมือคำนวณ IPv4 Subnet & VLSM</h2>
+          </div>
+        </div>
+
+        <div class="calc-container">
+          <div>
+            <div class="calc-input-group">
+              <label class="calc-label" for="calcIp">IP Address (ตัวอย่าง: 192.168.1.100)</label>
+              <input type="text" id="calcIp" class="calc-input" value="192.168.1.100">
+            </div>
+            <div class="calc-input-group">
+              <label class="calc-label" for="calcCidr">Subnet Mask / CIDR Prefix</label>
+              <select id="calcCidr" class="calc-select">
+                <option value="24">/24 (255.255.255.0)</option>
+              </select>
+            </div>
+            <button class="btn-icon" id="btnCalculate" style="width: 100%; justify-content: center; background: var(--accent-blue); color: white; padding: 12px; margin-top: 10px;">
+              คำนวณ Subnet ทันที 🚀
+            </button>
+            <div class="info-pill" style="margin-top: 18px;">
+              💡 <strong>ทิป:</strong> สำหรับ Point-to-Point ลิงก์ระหว่าง Router นิยมใช้ <code>/30</code> (2 Usable Hosts) หรือ <code>/31</code> (RFC 3021) เพื่อประหยัดพื้นที่ IP
+            </div>
+          </div>
+
+          <div class="calc-result-box">
+            <h3 style="font-size: 1.1rem; color: var(--accent-cyan); margin-bottom: 12px;">ผลลัพธ์การคำนวณ</h3>
+            <div class="result-row">
+              <span class="result-key">Network ID:</span>
+              <span class="result-val" id="resNetId">192.168.1.0</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Broadcast ID:</span>
+              <span class="result-val" id="resBroadcast">192.168.1.255</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Subnet Mask:</span>
+              <span class="result-val" id="resMask">255.255.255.0</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Wildcard Mask:</span>
+              <span class="result-val" id="resWildcard">0.0.0.255</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Usable Host Range:</span>
+              <span class="result-val" id="resHostRange">192.168.1.1 - 192.168.1.254</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Total Hosts:</span>
+              <span class="result-val" id="resTotalHosts">256</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Usable Hosts:</span>
+              <span class="result-val" id="resUsableHosts">254</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Class & ประเภท:</span>
+              <span class="result-val" id="resClass">Class C (Private RFC 1918)</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Binary IP:</span>
+              <span class="result-val" id="resBinaryIp" style="font-size: 0.78rem;">-</span>
+            </div>
+            <div class="result-row">
+              <span class="result-key">Binary Mask:</span>
+              <span class="result-val" id="resBinaryMask" style="font-size: 0.78rem;">-</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tool 2: Cisco CLI Simulator -->
+      <section id="tools-cli" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Hands-on Simulator</span>
+            <h2 class="module-title">💻 Cisco IOS CLI Simulator (Terminal จำลอง)</h2>
+          </div>
+        </div>
+
+        <p style="color: var(--text-secondary); margin-bottom: 16px;">
+          ฝึกพิมพ์คำสั่ง Cisco IOS เสมือนจริง หรือคลิกปุ่มลัดเพื่อทดสอบดูการแสดงผลของคำสั่งต่าง ๆ เช่น <code>show ip route</code>, <code>show vlan brief</code> หรือการทดสอบสายแลนด้วย <code>TDR Cable Diagnostics</code>
+        </p>
+
+        <div class="terminal-window">
+          <div class="terminal-titlebar">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-title">Console Session - Cisco Catalyst IOS 15.x</span>
+            <span style="font-size: 0.75rem; color: #6b7280;">Baud: 9600 8-N-1</span>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div class="terminal-output" style="color: #9ca3af;">
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.2(2)E
+Type "help" or "?" to see available simulated commands.
+            </div>
+            <div class="terminal-input-row">
+              <span class="terminal-prompt" id="terminalPrompt">Switch#</span>
+              <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" placeholder="พิมพ์คำสั่ง เช่น show ip route, show vlan brief แล้วกด Enter...">
+            </div>
+          </div>
+        </div>
+
+        <div class="cli-chips">
+          <span style="font-size: 0.8rem; color: var(--text-muted); align-self: center;">คำสั่งลัดทดลองคลิก:</span>
+          <button class="cli-chip" data-cmd="show ip int brief">show ip int brief</button>
+          <button class="cli-chip" data-cmd="show ip route">show ip route</button>
+          <button class="cli-chip" data-cmd="show vlan brief">show vlan brief</button>
+          <button class="cli-chip" data-cmd="show interfaces trunk">show interfaces trunk</button>
+          <button class="cli-chip" data-cmd="show etherchannel summary">show etherchannel summary</button>
+          <button class="cli-chip" data-cmd="show ip ospf neighbor">show ip ospf neighbor</button>
+          <button class="cli-chip" data-cmd="show standby brief">show standby brief</button>
+          <button class="cli-chip" data-cmd="show access-lists">show access-lists</button>
+          <button class="cli-chip" data-cmd="test cable-diagnostics tdr interface gigabitEthernet 0/1">test cable-diagnostics tdr</button>
+          <button class="cli-chip" data-cmd="show cable-diagnostics tdr interface gigabitEthernet 0/1">show cable-diagnostics tdr</button>
+          <button class="cli-chip" data-cmd="clear">clear screen</button>
+        </div>
+      </section>
+
+      <!-- Tool 3: Packet Encapsulation Flow Visualizer -->
+      <section id="tools-encapsulation" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Interactive Visualizer</span>
+            <h2 class="module-title">📦 กระบวนการ Encapsulation & PDU ของข้อมูล</h2>
+          </div>
+        </div>
+
+        <p style="color: var(--text-secondary); margin-bottom: 16px;">
+          คลิกเลือกแต่ละ Layer เพื่อดูว่าเมื่อข้อมูลเดินทางลงมาจาก Application สู่ Physical มีการเพิ่ม Header และห่อหุ้ม Protocol Data Unit (PDU) อย่างไร:
+        </p>
+
+        <div class="pdu-flow">
+          <div class="pdu-step active" data-layer="app">
+            <span class="pdu-badge">Layer 7 - 5</span>
+            <div class="pdu-info">
+              <h4>Application / Presentation / Session Layer</h4>
+              <p>สร้าง Data Payload ดั้งเดิมจากผู้ใช้งาน (เช่น ข้อความ HTTP, DNS)</p>
+            </div>
+          </div>
+
+          <div class="pdu-step" data-layer="transport">
+            <span class="pdu-badge">Layer 4</span>
+            <div class="pdu-info">
+              <h4>Transport Layer</h4>
+              <p>ห่อหุ้มกลายเป็น <strong>Segment</strong> (ระบุ Source & Destination Port Number เช่น 80, 443)</p>
+            </div>
+          </div>
+
+          <div class="pdu-step" data-layer="network">
+            <span class="pdu-badge">Layer 3</span>
+            <div class="pdu-info">
+              <h4>Network Layer</h4>
+              <p>ห่อหุ้มกลายเป็น <strong>Packet</strong> (ระบุ Source & Destination IP Address และ TTL)</p>
+            </div>
+          </div>
+
+          <div class="pdu-step" data-layer="datalink">
+            <span class="pdu-badge">Layer 2</span>
+            <div class="pdu-info">
+              <h4>Data Link Layer</h4>
+              <p>ห่อหุ้มกลายเป็น <strong>Frame</strong> (เพิ่ม Header: Source/Destination MAC + 802.1Q Tag และ Trailer: FCS Checksum)</p>
+            </div>
+          </div>
+
+          <div class="pdu-step" data-layer="physical">
+            <span class="pdu-badge">Layer 1</span>
+            <div class="pdu-info">
+              <h4>Physical Layer</h4>
+              <p>แปลงเฟรมทั้งหมดกลายเป็น <strong>Bits (0 และ 1)</strong> ส่งผ่านสายสัญญาณทองแดง, ไฟเบอร์ออปติก หรือคลื่นความถี่</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="encapsulationPreview" style="margin-top: 20px;">
+          <div style="background: var(--bg-tertiary); padding: 18px; border-radius: var(--radius-md); border-left: 4px solid var(--accent-cyan);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 style="color: var(--accent-cyan); font-size: 1.1rem;">Layer 7-5: Application Data</h4>
+              <span class="badge-tag">PDU: Data</span>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 12px;">ข้อมูลดั้งเดิมจากแอปพลิเคชัน (เช่น ข้อความ HTTP Request, DNS Query, อีเมล SMTP)</p>
+            <div style="background: var(--code-bg); padding: 12px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.85rem; color: #67e8f9; overflow-x: auto;">
+              [ Data Payload ]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           DAY 1 MODULES
+           =================================================================== -->
+      <section id="mod-1" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 1 • Module 1</span>
+            <h2 class="module-title">Introduction to Networks (บทนำสู่ระบบเครือข่าย)</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🌐 โครงสร้างพื้นฐานของระบบเครือข่าย (Network Fundamentals)</h3>
+          <p>
+            ระบบเครือข่ายคอมพิวเตอร์ (Computer Network) คือการนำอุปกรณ์ตั้งแต่ 2 เครื่องขึ้นไปมาเชื่อมต่อกันเพื่อแลกเปลี่ยนข้อมูลและแบ่งปันทรัพยากร โดยมีองค์ประกอบหลักได้แก่ อุปกรณ์ปลายทาง (End Devices เช่น PC, Server, Smart Phone), อุปกรณ์ตัวกลาง (Intermediary Devices เช่น Switch, Router, Firewall) และตัวกลางส่งสัญญาณ (Network Media เช่น UTP Cable, Fiber Optic, Radio Frequencies)
+          </p>
+          
+          <div class="grid-3" style="margin-top: 18px;">
+            <div class="info-pill">
+              <strong>LAN (Local Area Network)</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">เครือข่ายครอบคลุมพื้นที่จำกัด เช่น ภายในห้อง, อาคารสำนักงาน หรือบ้าน</p>
+            </div>
+            <div class="info-pill">
+              <strong>MAN (Metropolitan Area Network)</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">เครือข่ายครอบคลุมระดับเมืองหรือชุมชน เชื่อมต่อหลาย LAN เข้าด้วยกัน</p>
+            </div>
+            <div class="info-pill">
+              <strong>WAN (Wide Area Network)</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">เครือข่ายระยะไกลระดับประเทศหรือทั่วโลก เช่น ระบบอินเทอร์เน็ต</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🏢 สถาปัตยกรรม Campus Network แบบ 3 ระดับ (Hierarchical Design)</h3>
+          <p>
+            การออกแบบโครงสร้างเครือข่ายองค์กรที่ดีตามมาตรฐาน Cisco มักใช้โมเดลลำดับชั้น (Three-Tier Hierarchical Model) เพื่อให้ง่ายต่อการขยายตัว (Scalability), ปลอดภัย (Security) และง่ายต่อการแก้ไขปัญหา (Maintainability):
+          </p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Layer (ระดับ)</th>
+                  <th>บทบาทหน้าที่หลัก</th>
+                  <th>อุปกรณ์ที่ใช้งาน</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color: var(--accent-red);">Core Layer</strong></td>
+                  <td>ทางด่วนความเร็วสูง (High-Speed Backbone) มุ่งเน้นการส่งผ่านข้อมูลปริมาณมากอย่างรวดเร็วที่สุด มีความเสถียรภาพสูงและไม่ทำ Packet Filtering ที่ซับซ้อน</td>
+                  <td>High-end Core Switches, Optical Routers</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--accent-orange);">Distribution Layer</strong></td>
+                  <td>ชั้นนโยบายและควบคุม (Policy-based Connectivity) ทำหน้าที่กำหนดขอบเขต Routing, กรองความปลอดภัยด้วย ACL, บังคับใช้ QoS และเชื่อมโยงระหว่าง Access กับ Core</td>
+                  <td>Layer 3 Distribution Switches, Routers</td>
+                </tr>
+                <tr>
+                  <td><strong style="color: var(--accent-teal);">Access Layer</strong></td>
+                  <td>จุดเชื่อมต่ออุปกรณ์ของผู้ใช้งาน (Workstations, IP Phones, Wireless AP, Printers) ควบคุมการเข้าถึงพอร์ต (Port Security, 802.1X) และกำหนดค่า VLAN</td>
+                  <td>Layer 2 Access Switches, Access Points</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 2 -->
+      <section id="mod-2" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 1 • Module 2</span>
+            <h2 class="module-title">The OSI and TCP/IP Reference Model</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">📚 เปรียบเทียบ OSI 7 Layers vs TCP/IP Protocol Suite</h3>
+          <p>
+            แบบจำลองทางความคิดช่วยให้นักพัฒนาและวิศวกรเครือข่ายเข้าใจว่าข้อมูลสื่อสารกันอย่างไรในแต่ละระดับชั้น:
+          </p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>OSI Layer</th>
+                  <th>ชื่อชั้น (Layer Name)</th>
+                  <th>PDU</th>
+                  <th>โปรโตคอลตัวอย่าง</th>
+                  <th>TCP/IP Layer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Layer 7</td>
+                  <td>Application</td>
+                  <td rowspan="3">Data</td>
+                  <td>HTTP, HTTPS, DNS, DHCP, FTP, SSH, Telnet</td>
+                  <td rowspan="3"><strong>Application Layer</strong></td>
+                </tr>
+                <tr>
+                  <td>Layer 6</td>
+                  <td>Presentation</td>
+                  <td>SSL/TLS, JPEG, ASCII, MP4, การเข้ารหัสข้อมูล</td>
+                </tr>
+                <tr>
+                  <td>Layer 5</td>
+                  <td>Session</td>
+                  <td>RPC, NetBIOS, การสร้างและตัดเซสชัน</td>
+                </tr>
+                <tr>
+                  <td>Layer 4</td>
+                  <td>Transport</td>
+                  <td>Segment</td>
+                  <td>TCP (Reliable, Handshake), UDP (Fast, Connectionless)</td>
+                  <td><strong>Transport Layer</strong></td>
+                </tr>
+                <tr>
+                  <td>Layer 3</td>
+                  <td>Network</td>
+                  <td>Packet</td>
+                  <td>IPv4, IPv6, ICMP, OSPF, BGP, ARP</td>
+                  <td><strong>Internet Layer</strong></td>
+                </tr>
+                <tr>
+                  <td>Layer 2</td>
+                  <td>Data Link</td>
+                  <td>Frame</td>
+                  <td>Ethernet (802.3), Wi-Fi (802.11), PPP, HDLC, VLAN (802.1Q)</td>
+                  <td rowspan="2"><strong>Network Access Layer</strong></td>
+                </tr>
+                <tr>
+                  <td>Layer 1</td>
+                  <td>Physical</td>
+                  <td>Bits</td>
+                  <td>RJ-45, Cat5e/Cat6 UTP Cable, Fiber Optic, สัญญาณคลื่นวิทยุ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 3 -->
+      <section id="mod-3" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 1 • Module 3</span>
+            <h2 class="module-title">Networking Devices & Switching Concepts</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🔍 Collision Domain vs Broadcast Domain</h3>
+          <div class="grid-2">
+            <div class="info-pill warning">
+              <h4 style="color: var(--accent-orange); margin-bottom: 6px;">Collision Domain (ขอบเขตการชนกันของสัญญาณ)</h4>
+              <p style="font-size: 0.9rem;">
+                พื้นที่ที่สัญญาณไฟฟ้าอาจเกิดการชนกันเมื่อส่งพร้อมกัน:
+                <br>• <strong>Hub:</strong> ทุกพอร์ตอยู่รวมใน Collision Domain เดียวกัน
+                <br>• <strong>Switch:</strong> <em>แยก</em> 1 พอร์ต = 1 Collision Domain (ทํางานแบบ Full Duplex จึงไม่ชนกัน)
+              </p>
+            </div>
+            <div class="info-pill success">
+              <h4 style="color: var(--accent-teal); margin-bottom: 6px;">Broadcast Domain (ขอบเขตการแพร่กระจายสัญญาณ)</h4>
+              <p style="font-size: 0.9rem;">
+                พื้นที่ที่เมื่อส่ง Broadcast Frame (MAC: FF:FF:FF:FF:FF:FF) ทุกเครื่องจะได้รับ:
+                <br>• <strong>Switch:</strong> ทุกพอร์ตอยู่ Broadcast Domain เดียวกัน (ยกเว้นแบ่ง VLAN)
+                <br>• <strong>Router:</strong> เป็นอุปกรณ์ที่ <em>ตัดแบ่งขอบเขต</em> Broadcast Domain (1 Interface = 1 Broadcast Domain)
+              </p>
+            </div>
+          </div>
+
+          <h4 style="margin: 20px 0 10px; color: var(--accent-cyan);">กลไกการทำงานของ Switch (CAM / MAC Address Table)</h4>
+          <ol style="padding-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong>Learning:</strong> ตรวจสอบ <em>Source MAC Address</em> ของเฟรมที่เข้ามายังพอร์ต แล้วบันทึกลง MAC Table คู่กับหมายเลขพอร์ต</li>
+            <li><strong>Flooding:</strong> หาก <em>Destination MAC Address</em> ยังไม่ปรากฏในตาราง (Unknown Unicast) Switch จะส่งเฟรมออกไปทุกพอร์ต (ยกเว้นพอร์ตที่รับเข้ามา)</li>
+            <li><strong>Forwarding / Filtering:</strong> หาก Destination MAC มีบันทึกในตารางแล้ว Switch จะส่งเฉพาะออกพอร์ตปลายทางนั้นพอร์ตเดียว</li>
+            <li><strong>Aging:</strong> ลบ Entry ที่ไม่มีการติดต่อสื่อสารเกินเวลา Aging Timer (ค่าเริ่มต้น 300 วินาที)</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Module 4 Part 1 -->
+      <section id="mod-4-part1" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 1 • Module 4</span>
+            <h2 class="module-title">IPv4 Address & Classes (โครงสร้างที่อยู่ IPv4)</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🔢 โครงสร้าง IPv4 และการแบ่งคลาส</h3>
+          <p>
+            IPv4 Address มีขนาด <strong>32 bits</strong> แบ่งออกเป็น 4 ชุด (Octets) ชุดละ 8 bits คั่นด้วยเครื่องหมายจุด ประกอบด้วยส่วน <strong>Network ID</strong> (ระบุเครือข่าย) และ <strong>Host ID</strong> (ระบุเครื่องลูกข่าย):
+          </p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>ช่วง IP (First Octet)</th>
+                  <th>Default Mask</th>
+                  <th>สัดส่วน Net:Host</th>
+                  <th>จำนวน Hosts / Net</th>
+                  <th>การใช้งาน</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Class A</strong></td>
+                  <td><code>1.0.0.0 - 126.255.255.255</code></td>
+                  <td>255.0.0.0 (/8)</td>
+                  <td>N.H.H.H</td>
+                  <td>16,777,214</td>
+                  <td>องค์กรขนาดใหญ่มาก</td>
+                </tr>
+                <tr>
+                  <td><strong>Class B</strong></td>
+                  <td><code>128.0.0.0 - 191.255.255.255</code></td>
+                  <td>255.255.0.0 (/16)</td>
+                  <td>N.N.H.H</td>
+                  <td>65,534</td>
+                  <td>องค์กรขนาดกลาง-ใหญ่</td>
+                </tr>
+                <tr>
+                  <td><strong>Class C</strong></td>
+                  <td><code>192.0.0.0 - 223.255.255.255</code></td>
+                  <td>255.255.255.0 (/24)</td>
+                  <td>N.N.N.H</td>
+                  <td>254</td>
+                  <td>องค์กรขนาดเล็ก / ทั่วไป</td>
+                </tr>
+                <tr>
+                  <td><strong>Class D</strong></td>
+                  <td><code>224.0.0.0 - 239.255.255.255</code></td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>Multicast Groups</td>
+                </tr>
+                <tr>
+                  <td><strong>Class E</strong></td>
+                  <td><code>240.0.0.0 - 255.255.255.255</code></td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>วิจัยและทดลอง (Experimental)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="info-pill success" style="margin-top: 14px;">
+            <strong>ช่วง Private IP Address (RFC 1918) ที่ห้ามวิ่งบนอินเทอร์เน็ตสาธารณะ:</strong>
+            <br>• Class A: <code>10.0.0.0 - 10.255.255.255</code> (/8)
+            <br>• Class B: <code>172.16.0.0 - 172.31.255.255</code> (/12)
+            <br>• Class C: <code>192.168.0.0 - 192.168.255.255</code> (/16)
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           DAY 2 MODULES
+           =================================================================== -->
+      <!-- Module 4 Part 2 -->
+      <section id="mod-4-part2" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 2 • Module 4 (ต่อ)</span>
+            <h2 class="module-title">Subnetting & VLSM (การคำนวณแบ่งเครือข่ายย่อย)</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">📐 สูตรคำนวณ Subnetting ด้วยเทคนิค "Magic Number"</h3>
+          <p>
+            การทำ Subnetting คือการยืมบิตจากส่วน Host ID มาเพิ่มให้ส่วน Network ID เพื่อสร้างวงเครือข่ายย่อย:
+          </p>
+          <ul style="padding-left: 20px; line-height: 1.8; color: var(--text-secondary);">
+            <li><strong>จำนวน Subnets ที่ได้:</strong> $2^n$ (โดย $n$ คือจำนวนบิตที่ยืมมา)</li>
+            <li><strong>จำนวน Hosts ทั้งหมดต่อ Subnet:</strong> $2^h$ (โดย $h$ คือจำนวนบิต Host ที่เหลืออยู่)</li>
+            <li><strong>จำนวน Usable Hosts:</strong> $2^h - 2$ (หัก Network ID ตัวแรก และ Broadcast ID ตัวสุดท้ายออก)</li>
+            <li><strong>Magic Number (ขนาดช่วงก้าว):</strong> $256 - \text{Subnet Mask Octet ที่ถูกยืม}$</li>
+          </ul>
+
+          <div class="info-pill" style="margin-top: 14px;">
+            <strong>ตัวอย่าง:</strong> ต้องการแบ่ง Network <code>192.168.1.0/24</code> ให้เป็น 4 Subnets
+            <br>1. ต้องยืม 2 บิต ($2^2 = 4$) ทำให้ Prefix เปลี่ยนจาก <code>/24</code> เป็น <code>/26</code>
+            <br>2. Subnet Mask กลายเป็น <code>255.255.255.192</code>
+            <br>3. Magic Number = $256 - 192 = 64$
+            <br>4. จะได้ 4 วง: <code>192.168.1.0/26</code>, <code>192.168.1.64/26</code>, <code>192.168.1.128/26</code>, <code>192.168.1.192/26</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 5 -->
+      <section id="mod-5" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 2 • Module 5</span>
+            <h2 class="module-title">Function of Routing (หลักการทำงานของ Router)</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🧭 การค้นหาและตัดสินใจเลือกเส้นทาง (Path Determination)</h3>
+          <p>
+            Router ทำงานที่ Network Layer (Layer 3) ทำหน้าที่รับแพ็กเก็ต ตรวจสอบ Destination IP และค้นหาเส้นทางที่ดีที่สุดในตารางเส้นทาง (Routing Table) โดยมีหลักเกณฑ์สำคัญ 3 ประการ:
+          </p>
+
+          <div class="grid-3" style="margin-top: 16px;">
+            <div class="info-pill">
+              <strong style="color: var(--accent-cyan);">1. Longest Prefix Match</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">เกณฑ์สำคัญที่สุด! Router จะเลือกเส้นทางที่มีความเจาะจงสูงสุด (Prefix ยาวสุด) เสมอ เช่น <code>/28</code> ชนะ <code>/24</code></p>
+            </div>
+            <div class="info-pill">
+              <strong style="color: var(--accent-purple);">2. Administrative Distance</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">หากมีหลาย Protocol เสนอเส้นทางที่มี Prefix เท่ากัน จะเลือก Protocol ที่มีค่า AD ต่ำสุด (น่าเชื่อถือที่สุด)</p>
+            </div>
+            <div class="info-pill">
+              <strong style="color: var(--accent-teal);">3. Metric (ต้นทุนเส้นทาง)</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">ภายใน Protocol เดียวกัน จะเลือกเส้นทางที่มีค่า Metric ต่ำสุด เช่น OSPF เลือก Cost ต่ำสุด, RIP เลือก Hop Count น้อยสุด</p>
+            </div>
+          </div>
+
+          <h4 style="margin: 20px 0 10px; color: var(--accent-cyan);">ตารางเปรียบเทียบ Administrative Distance (AD)</h4>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>ที่มาของเส้นทาง (Route Source)</th>
+                  <th>ค่า AD มาตรฐาน</th>
+                  <th>ระดับความน่าเชื่อถือ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Directly Connected</td><td>0</td><td>สูงสุด (เชื่อมต่อสายตรง)</td></tr>
+                <tr><td>Static Route</td><td>1</td><td>สูงมาก (ผู้ดูแลระบบกำหนดเอง)</td></tr>
+                <tr><td>EIGRP Internal</td><td>90</td><td>สูง</td></tr>
+                <tr><td>OSPF</td><td>110</td><td>มาตรฐานสากล</td></tr>
+                <tr><td>IS-IS</td><td>115</td><td>มาตรฐาน</td></tr>
+                <tr><td>RIP</td><td>120</td><td>ต่ำ</td></tr>
+                <tr><td>External EIGRP</td><td>170</td><td>ต่ำมาก</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 6 -->
+      <section id="mod-6" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 2 • Module 6</span>
+            <h2 class="module-title">Static Routing (การกำหนดเส้นทางแบบคงที่)</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">📍 รูปแบบคำสั่ง Static Routing</h3>
+          <p>
+            Static Route เหมาะสำหรับเครือข่ายขนาดเล็ก หรือเครือข่ายแบบ Stub Network ที่มีทางออกสู่ภายนอกเพียงทางเดียว มีข้อดีคือปลอดภัย ไม่กิน Bandwidth จาก Routing Updates แต่มีข้อจำกัดคือต้องแก้ค่าด้วยตนเองหากมีลิงก์ขาด:
+          </p>
+
+          <div class="code-block-container">
+            <div class="code-header">
+              <span class="code-lang">Cisco IOS - Static Routing Examples</span>
+              <button class="copy-btn">คัดลอกคำสั่ง</button>
+            </div>
+            <pre><code>! 1. Standard Static Route (ระบุ Next-hop IP)
+Router(config)# ip route 192.168.20.0 255.255.255.0 10.0.0.2
+
+! 2. Default Route (Quad-Zero: ชี้ออกอินเทอร์เน็ตหรือ Gateway ปลายทาง)
+Router(config)# ip route 0.0.0.0 0.0.0.0 203.0.113.1
+
+! 3. Floating Static Route (สร้างเส้นทางสำรองโดยกำหนดค่า AD สูงกว่าปกติ เช่น 10)
+Router(config)# ip route 192.168.20.0 255.255.255.0 10.0.1.2 10</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           DAY 3 MODULES
+           =================================================================== -->
+      <!-- Module 7 -->
+      <section id="mod-7" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 3 • Module 7</span>
+            <h2 class="module-title">STP Concepts and EtherChannel</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🌳 Spanning Tree Protocol (STP 802.1D / 802.1w)</h3>
+          <p>
+            เมื่อเชื่อมต่อสายสัญญาณ Switch แบบคู่ขนาน (Redundant Links) เพื่อป้องกันสายขาด อาจเกิดปัญหา <strong>Layer 2 Loops</strong> ส่งผลให้เกิด Broadcast Storm, MAC Table Thrashing และ Multiple Frame Transmission โปรโตคอล STP จึงถูกพัฒนาขึ้นเพื่อบล็อกพอร์ตส่วนเกินในเชิงตรรกะ และจะเปิดอัตโนมัติเมื่อสายหลักขาด:
+          </p>
+
+          <div class="grid-2" style="margin-top: 14px;">
+            <div class="info-pill">
+              <strong>Root Bridge Election:</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">Switch ที่มีค่า Bridge ID (Bridge Priority + MAC Address) <em>ต่ำที่สุด</em> จะชนะและได้รับเลือกเป็น Root Bridge</p>
+            </div>
+            <div class="info-pill">
+              <strong>STP Port Roles:</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">• Root Port (RP): พอร์ตบน Non-root Switch ที่ไปถึง Root Bridge ดีที่สุด
+              <br>• Designated Port (DP): พอร์ตที่ส่งข้อมูลลงในแต่ละ Segment
+              <br>• Blocking / Alternate: พอร์ตที่ถูกปิดไม่ให้ส่งผ่านข้อมูลเพื่อกัน Loop</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🔗 EtherChannel (Link Aggregation)</h3>
+          <p>
+            การรวมพอร์ตสายแลนกายภาพตั้งแต่ 2 ถึง 8 เส้น ให้เสมือนเป็น Logical Link เดียว (Port-Channel) ช่วยเพิ่มแบนด์วิดท์และสร้างความซ้ำซ้อนโดยที่ STP ไม่บล็อกพอร์ต:
+          </p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>โปรโตคอล</th>
+                  <th>โหมดที่ต้องจับคู่ (Modes)</th>
+                  <th>ลักษณะ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>LACP</strong> (IEEE 802.3ad)</td>
+                  <td><code>active</code> + <code>active</code> หรือ <code>active</code> + <code>passive</code></td>
+                  <td>มาตรฐานเปิด ใช้งานร่วมกับทุกยี่ห้อได้ แนะนำให้ใช้งาน</td>
+                </tr>
+                <tr>
+                  <td><strong>PAgP</strong> (Cisco)</td>
+                  <td><code>desirable</code> + <code>desirable</code> หรือ <code>desirable</code> + <code>auto</code></td>
+                  <td>Cisco Proprietary</td>
+                </tr>
+                <tr>
+                  <td><strong>Static (On)</strong></td>
+                  <td><code>on</code> + <code>on</code></td>
+                  <td>บังคับรวมลิงก์โดยไม่ส่งแพ็กเก็ตเจรจา (เสี่ยงหากปลายทางตั้งค่าไม่ตรงกัน)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="code-block-container">
+            <div class="code-header">
+              <span class="code-lang">Cisco IOS - การตั้งค่า LACP EtherChannel</span>
+              <button class="copy-btn">คัดลอกคำสั่ง</button>
+            </div>
+            <pre><code>Switch(config)# interface range GigabitEthernet 0/1 - 2
+Switch(config-if-range)# channel-group 1 mode active
+Switch(config-if-range)# exit
+Switch(config)# interface port-channel 1
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk allowed vlan 10,20,30</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 8 -->
+      <section id="mod-8" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 3 • Module 8</span>
+            <h2 class="module-title">VLANs and Trunks (การแบ่งเครือข่ายเสมือน)</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🏷️ พอร์ต Access vs พอร์ต Trunk (IEEE 802.1Q)</h3>
+          <p>
+            VLAN (Virtual Local Area Network) ช่วยแบ่ง Broadcast Domain บน Switch เดียวกันเพื่อความปลอดภัยและประสิทธิภาพ พอร์ตที่เชื่อมต่อไปยังเครื่องลูกข่ายจะเป็น <strong>Access Port</strong> (ไม่ติด Tag) ส่วนพอร์ตที่เชื่อมต่อระหว่าง Switch ด้วยกันจะเป็น <strong>Trunk Port</strong> ที่มีการแนบ Header <strong>IEEE 802.1Q (4 Bytes)</strong> ระบุเลข VLAN ID (1 - 4094):
+          </p>
+
+          <div class="code-block-container">
+            <div class="code-header">
+              <span class="code-lang">Cisco IOS - ตัวอย่างการสร้าง VLAN & กำหนด Trunk (จากสไลด์หน้า 227)</span>
+              <button class="copy-btn">คัดลอกคำสั่ง</button>
+            </div>
+            <pre><code>! สร้าง VLAN พร้อมตั้งชื่อ
+Switch(config)# vlan 10
+Switch(config-vlan)# name Faculty_Staff
+Switch(config)# vlan 20
+Switch(config-vlan)# name Students
+Switch(config)# vlan 99
+Switch(config-vlan)# name Native_Mgmt
+Switch(config-vlan)# exit
+
+! กำหนด Trunk Port และเปลี่ยน Native VLAN เป็น 99
+Switch(config)# interface FastEthernet 0/1
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk native vlan 99
+Switch(config-if)# switchport trunk allowed vlan 10,20,99</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 9 -->
+      <section id="mod-9" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 3 • Module 9</span>
+            <h2 class="module-title">Routing Between VLANs (Inter-VLAN)</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">⚡ การเชื่อมโยงข้อมูลข้าม VLAN (Inter-VLAN Routing)</h3>
+          <p>
+            เนื่องจากอุปกรณ์ในคนละ VLAN ไม่สามารถสื่อสารกันโดยตรงที่ Layer 2 ได้ จึงต้องอาศัยอุปกรณ์ Layer 3 เข้ามาทำ Routing:
+          </p>
+
+          <div class="grid-2" style="margin-top: 14px;">
+            <div class="info-pill">
+              <strong>แบบ Router-on-a-Stick (ROAS)</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">ใช้สายแลน 1 เส้นระหว่าง Switch และ Router โดยแบ่งพอร์ต Router ออกเป็น Sub-interfaces ย่อยตาม VLAN:</p>
+              <div class="code-block-container" style="margin-top: 8px;">
+                <pre style="padding: 10px; font-size: 0.8rem;"><code>Router(config)# interface Gi0/0.10
+Router(config-subif)# encapsulation dot1q 10
+Router(config-subif)# ip address 192.168.10.1 255.255.255.0
+Router(config)# interface Gi0/0.20
+Router(config-subif)# encapsulation dot1q 20
+Router(config-subif)# ip address 192.168.20.1 255.255.255.0</code></pre>
+              </div>
+            </div>
+
+            <div class="info-pill success">
+              <strong>แบบ Layer 3 Switch (SVI)</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">ใช้ความสามารถ Routing ภายใน Switch (Hardware-based Asic) ทำงานได้รวดเร็วมาก โดยใช้ Switched Virtual Interface:</p>
+              <div class="code-block-container" style="margin-top: 8px;">
+                <pre style="padding: 10px; font-size: 0.8rem;"><code>L3Switch(config)# ip routing
+L3Switch(config)# interface vlan 10
+L3Switch(config-if)# ip address 192.168.10.1 255.255.255.0
+L3Switch(config)# interface vlan 20
+L3Switch(config-if)# ip address 192.168.20.1 255.255.255.0</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 10 Part 1 -->
+      <section id="mod-10-part1" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 3 • Module 10 (ตอนที่ 1)</span>
+            <h2 class="module-title">Dynamic Routing Protocol Concepts</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🔄 พื้นฐาน Dynamic Routing</h3>
+          <p>
+            โปรโตคอลแบบ Dynamic Routing ช่วยให้เราท์เตอร์แลกเปลี่ยนข้อมูลตารางเส้นทางกันโดยอัตโนมัติ และปรับเปลี่ยนเส้นทางทันทีเมื่อเกิดเหตุลิงก์ขัดข้อง (Network Convergence):
+          </p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>ประเภท</th>
+                  <th>อัลกอริทึม & ลักษณะ</th>
+                  <th>โปรโตคอลตัวอย่าง</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Distance Vector</strong></td>
+                  <td>คำนวณตามระยะทาง (Distance) และทิศทาง (Vector) ส่งตารางเส้นทางเป็นระยะ (Routing by rumor)</td>
+                  <td>RIPv2, EIGRP</td>
+                </tr>
+                <tr>
+                  <td><strong>Link-State</strong></td>
+                  <td>Router ทุกตัวใน Area รู้ภาพรวม Topology แผนที่เดียวกันทั้งหมดผ่าน LSA และใช้อัลกอริทึม Dijkstra SPF</td>
+                  <td>OSPF, IS-IS</td>
+                </tr>
+                <tr>
+                  <td><strong>Path-Vector</strong></td>
+                  <td>ใช้ส่งข้อมูลข้าม Autonomous System (AS) ระดับผู้ให้บริการอินเทอร์เน็ต</td>
+                  <td>BGP (Border Gateway Protocol)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           DAY 4 MODULES
+           =================================================================== -->
+      <!-- Module 10 Part 2 -->
+      <section id="mod-10-part2" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 4 • Module 10 (ตอนที่ 2)</span>
+            <h2 class="module-title">OSPF Single Area Configuration</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">📡 การตั้งค่า OSPFv2 Single Area (Area 0 Backbone)</h3>
+          <p>
+            OSPF เป็น Link-State Protocol ยอดนิยม มีค่า AD = 110 คำนวณ Metric จาก Bandwidth ($\text{Cost} = \frac{10^8}{\text{Bandwidth in bps}}$) โดยทุก Area ใน OSPF จะต้องเชื่อมต่อเข้ากับ <strong>Backbone Area (Area 0)</strong>:
+          </p>
+
+          <div class="code-block-container">
+            <div class="code-header">
+              <span class="code-lang">Cisco IOS - การตั้งค่า OSPF Single Area (จากสไลด์หน้า 257)</span>
+              <button class="copy-btn">คัดลอกคำสั่ง</button>
+            </div>
+            <pre><code>! 1. เปิดใช้ OSPF Process ID 1
+Router(config)# router ospf 1
+
+! 2. กำหนด Router ID ด้วยตนเอง (แนะนำเพื่อป้องกันการเปลี่ยนอัตโนมัติ)
+Router(config-router)# router-id 1.1.1.1
+
+! 3. ประกาศ Network ที่ต้องการให้ OSPF ทำงาน โดยใช้ Wildcard Mask
+Router(config-router)# network 192.168.10.0 0.0.0.255 area 0
+Router(config-router)# network 10.0.0.0 0.0.0.3 area 0
+
+! 4. ปิดการส่ง Hello Packet ออกพอร์ต LAN เพื่อประหยัด Bandwidth และเพิ่มความปลอดภัย
+Router(config-router)# passive-interface GigabitEthernet0/0/0
+
+! 5. กระจาย Default Route (หากเราท์เตอร์นี้เชื่อมต่ออินเทอร์เน็ต)
+Router(config-router)# default-information originate
+Router(config-router)# exit</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 11 -->
+      <section id="mod-11" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 4 • Module 11</span>
+            <h2 class="module-title">Layer 3 Redundancy (FHRP & HSRP)</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🛡️ กลไกความซ้ำซ้อนของ Default Gateway (HSRP)</h3>
+          <p>
+            โดยทั่วไปเครื่องลูกข่ายจะตั้งค่า Default Gateway เป็น IP เดี่ยว ทำให้หาก Router ตัวนั้นเสีย ผู้ใช้จะออกสู่อินเทอร์เน็ตไม่ได้ โปรโตคอล <strong>First Hop Redundancy Protocol (FHRP)</strong> เช่น <strong>HSRP (Hot Standby Router Protocol)</strong> ของ Cisco จึงสร้าง <em>Virtual IP</em> และ <em>Virtual MAC</em> เสมือนร่วมกันระหว่าง 2 Router:
+          </p>
+
+          <div class="grid-2" style="margin-top: 14px;">
+            <div class="info-pill success">
+              <strong>Active Router:</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">ทำหน้าที่ส่งผ่านข้อมูลจริง ตอบ ARP Reply ด้วย Virtual MAC และส่ง Hello Message (Multicast 224.0.0.2) ทุก 3 วินาที</p>
+            </div>
+            <div class="info-pill">
+              <strong>Standby Router:</strong>
+              <p style="font-size: 0.85rem; margin-top: 4px;">คอยเฝ้าฟัง Hello Message หาก Active ขาดหายไปเกิน Hold Time (10 วินาที) จะยกระดับตนเองขึ้นเป็น Active ทันที</p>
+            </div>
+          </div>
+
+          <div class="code-block-container">
+            <div class="code-header">
+              <span class="code-lang">Cisco IOS - การตั้งค่า HSRP Active & Standby (จากสไลด์หน้า 269)</span>
+              <button class="copy-btn">คัดลอกคำสั่ง</button>
+            </div>
+            <pre><code>! บน Router 1 (กำหนดให้เป็น Active)
+R1(config)# interface GigabitEthernet 0/0/0
+R1(config-if)# ip address 192.168.1.2 255.255.255.0
+R1(config-if)# standby 1 ip 192.168.1.1       ! ชี้ Virtual IP เป็น Gateway ที่เครื่อง Client ใช้งาน
+R1(config-if)# standby 1 priority 110         ! เพิ่มค่า Priority ให้ชนะ (Default 100)
+R1(config-if)# standby 1 preempt              ! อนุญาตให้แย่งตำแหน่งกลับเมื่อตนเองกลับมาออนไลน์
+
+! บน Router 2 (ทำหน้าที่ Standby)
+R2(config)# interface GigabitEthernet 0/0/0
+R2(config-if)# ip address 192.168.1.3 255.255.255.0
+R2(config-if)# standby 1 ip 192.168.1.1
+R2(config-if)# standby 1 priority 90
+R2(config-if)# standby 1 preempt</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Module 12 -->
+      <section id="mod-12" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Day 4 • Module 12</span>
+            <h2 class="module-title">ACL Concepts (Access Control Lists)</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🔐 การควบคุมความปลอดภัยด้วย Access Control Lists</h3>
+          <p>
+            ACL คือชุดกฎในการคัดกรองแพ็กเก็ต (Packet Filtering) ทำงานโดยการตรวจสอบบรรทัดต่อบรรทัดจากบนลงล่าง (Top-to-Bottom) เมื่อแพ็กเก็ตตรงกับกฎข้อใดจะหยุดตรวจสอบทันที และมีกฎแฝงบรรทัดสุดท้ายคือ <strong>Implicit Deny Any</strong>:
+          </p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>ประเภท ACL</th>
+                  <th>หมายเลข Numbered</th>
+                  <th>สิ่งที่สามารถกรองได้</th>
+                  <th>กฎการติดตั้งที่เหมาะสม (Placement Rule)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Standard ACL</strong></td>
+                  <td>1 - 99, 1300 - 1999</td>
+                  <td>กรองเฉพาะ <em>Source IP Address</em> เท่านั้น</td>
+                  <td>ควรวางไว้ <strong>ใกล้ปลายทางที่สุด (Close to Destination)</strong> เพื่อไม่ให้เผลอบล็อกทราฟฟิกไปหาที่อื่น</td>
+                </tr>
+                <tr>
+                  <td><strong>Extended ACL</strong></td>
+                  <td>100 - 199, 2000 - 2699</td>
+                  <td>กรองทั้ง Source IP, Destination IP, Protocol (TCP/UDP/ICMP), Port Number</td>
+                  <td>ควรวางไว้ <strong>ใกล้ต้นทางที่สุด (Close to Source)</strong> เพื่อตัดทิ้งตั้งแต่เนิ่นๆ ประหยัดแบนด์วิดท์เครือข่าย</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="code-block-container">
+            <div class="code-header">
+              <span class="code-lang">Cisco IOS - ตัวอย่างการสร้าง ACL กรองทราฟฟิก & ป้องกัน VTY (จากสไลด์หน้า 290-301)</span>
+              <button class="copy-btn">คัดลอกคำสั่ง</button>
+            </div>
+            <pre><code>! Extended ACL 101: ปฏิเสธ Telnet (23) และ SSH (22) จาก Subnet 172.16.3.0/24 แต่ยอมให้ผ่านอย่างอื่น
+Router(config)# access-list 101 deny tcp 172.16.3.0 0.0.0.255 any eq 23
+Router(config)# access-list 101 deny tcp 172.16.3.0 0.0.0.255 any eq 22
+Router(config)# access-list 101 permit ip any any
+
+! ผูก ACL เข้ากับ Interface ฝั่งขาเข้า (Inbound)
+Router(config)# interface GigabitEthernet 0/0/0
+Router(config-if)# ip access-group 101 in
+Router(config-if)# exit
+
+! การใช้ Standard ACL ป้องกันการรีโมตเข้ามาทาง Line VTY
+Router(config)# access-list 10 permit host 192.168.1.100
+Router(config)# line vty 0 15
+Router(config-line)# access-class 10 in
+Router(config-line)# transport input ssh</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           QUIZ SECTION
+           =================================================================== -->
+      <section id="quiz-section" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Practice & Assessment</span>
+            <h2 class="module-title">📝 แบบทดสอบวัดความรู้ Trainee (Interactive Quiz)</h2>
+          </div>
+        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">
+          ทดสอบความจำและความเข้าใจในทฤษฎีและคำสั่งสำคัญ เมื่อคลิกเลือกคำตอบ ระบบจะแสดงเฉลยและเหตุผลในทันที:
+        </p>
+
+        <div id="quizContainer"></div>
+      </section>
+
+      <!-- ===================================================================
+           CHEATSHEET & TDR CABLE DIAGNOSTIC
+           =================================================================== -->
+      <section id="cheatsheet" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Reference Guide</span>
+            <h2 class="module-title">📋 Cisco IOS Quick Cheat Sheet</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">⚙️ คำสั่งตั้งค่าพื้นฐานและความปลอดภัย (Housekeeping)</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>คำสั่ง (Command)</th>
+                  <th>คำอธิบายหน้าที่</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>hostname &lt;name&gt;</code></td><td>ตั้งชื่ออุปกรณ์ เช่น R1, SW-Core</td></tr>
+                <tr><td><code>enable secret &lt;password&gt;</code></td><td>ตั้งรหัสผ่านเข้า Privileged Exec Mode (เข้ารหัสแบบ SHA-256 / MD5)</td></tr>
+                <tr><td><code>service password-encryption</code></td><td>สั่งเข้ารหัสผ่าน Plain text ทั้งหมดใน Config ไฟล์</td></tr>
+                <tr><td><code>banner motd $ &lt;Banner&gt; $</code></td><td>สร้างข้อความแจ้งเตือน Banner เมื่อมีผู้ใช้งานเชื่อมต่อเข้ามา</td></tr>
+                <tr><td><code>security passwords min-length 8</code></td><td>กำหนดความยาวรหัสผ่านขั้นต่ำ 8 ตัวอักษร</td></tr>
+                <tr><td><code>login block-for 120 attempts 3 within 60</code></td><td>ป้องกัน Brute-force ล็อก 120 วินาทีเมื่อใส่รหัสผิด 3 ครั้งใน 60 วินาที</td></tr>
+                <tr><td><code>line con 0 / line vty 0 15</code></td><td>เข้าโหมดกำหนดความปลอดภัยสาย Console และรีโมต VTY</td></tr>
+                <tr><td><code>logging synchronous</code></td><td>ป้องกันข้อความ Log แจ้งเตือนกระโดดมาทับข้อความที่กำลังพิมพ์</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TDR Cable Diagnostic -->
+      <section id="cable-test" class="module-section">
+        <div class="module-header">
+          <div>
+            <span class="module-tag">Hardware Diagnostics</span>
+            <h2 class="module-title">🔌 การทดสอบสายสัญญาณด้วยฟังก์ชัน TDR (Time Domain Reflectometer)</h2>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <h3 class="card-title">🔍 วิธีทดสอบสายแลนขาด/ช็อตบน Cisco Catalyst Switch</h3>
+          <p>
+            วิศวกรเครือข่ายสามารถใช้ Switch ทดสอบวัดความยาวสายและหาสถานะสาย UTP คู่สาย A, B, C, D ได้ทันทีโดยไม่ต้องใช้เครื่องเทสต์สายแลนแยกต่างหาก:
+          </p>
+
+          <div class="code-block-container">
+            <div class="code-header">
+              <span class="code-lang">CLI Test Procedure & Output</span>
+              <button class="copy-btn">คัดลอกคำสั่ง</button>
+            </div>
+            <pre><code>! 1. สั่งเริ่มการทดสอบ TDR บนพอร์ต (เช่น Gi0/1)
+Switch# test cable-diagnostics tdr interface gigabitEthernet 0/1
+TDR test started on interface Gi0/1
+A TDR test can take a few seconds to run on an interface
+Use 'show cable-diagnostics tdr' to read the TDR results.
+
+! 2. รอประมาณ 3-5 วินาที แล้วเรียกดูผลการวิเคราะห์
+Switch# show cable-diagnostics tdr interface gigabitEthernet 0/1
+TDR test last run on: March 01 01:59:04
+
+Interface Speed Local pair Pair length        Remote pair Pair status
+--------- ----- ---------- ------------------ ----------- --------------------
+Gi0/1     1000M Pair A     8    +/- 10 meters Pair B      Normal             
+                Pair B     8    +/- 10 meters Pair A      Normal             
+                Pair C     8    +/- 10 meters Pair D      Normal             
+                Pair D     8    +/- 10 meters Pair C      Normal             </code></pre>
+          </div>
+
+          <div class="grid-2" style="margin-top: 16px;">
+            <div class="info-pill success">
+              <strong>สถานะที่เป็นปกติ:</strong>
+              <br>• <strong>Normal:</strong> คู่สายเชื่อมต่อปลายทางสมบูรณ์ รับส่งสัญญาณที่ระดับ Gigabit Ethernet ได้ปกติ
+            </div>
+            <div class="info-pill danger">
+              <strong>สถานะที่ผิดปกติ:</strong>
+              <br>• <strong>Open:</strong> สายขาด หรือปลายสายหลุดออกจากพอร์ต (Pair length จะบอกระยะจุดที่สายขาด)
+              <br>• <strong>Short:</strong> คู่สายลัดวงจรช็อตติดกัน
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer style="margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.88rem;">
+        <p>Basic Network for Trainee • พัฒนาขึ้นจากหลักสูตรและเนื้อหาโดย <strong>Panthakit Totid</strong></p>
+        <p style="margin-top: 6px;">ระบบเว็บแอปพลิเคชันเพื่อการศึกษาและพัฒนาบุคลากรเครือข่าย • ใช้เพื่อการเรียนรู้และการฝึกอบรม</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
